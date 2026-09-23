@@ -11,7 +11,7 @@ const Footer = () => {
             <Image src={Logo} width={16} height={16} alt="Logo" />
             <Link
               href="/"
-              className="text-sm font-bold font-oswald text-white"
+              className="text-sm font-medium font-oswald text-white"
             >
               FITLOG
             </Link>
