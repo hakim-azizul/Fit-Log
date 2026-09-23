@@ -1,2 +1,8 @@
 @import "tailwindcss";
-
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, balck;
+}
+@theme {
+  --font-inter: var(--font-inter), sans-serif;
+  --font-oswald: var(--font-oswald), sans-serif;
+}
