@@ -3,15 +3,20 @@ import IWork from '@/types/workType';
 import WorkoutCard from '@/Components/Home/WorkCard';
 
 
-const getWorkData = async() =>{
-    const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
-    const data = await res.json()
-    return data;
+export const getWorkData = async() =>{
+    try{
+        const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+        const data = await res.json()
+        return data;
+    } catch(error){
+        console.error("Data fetching Unsuccesfull", error);
+        return[]
+    }
 }
 
 const WorksPage = async() => {
 
-    const works: IWork[] = await getWorkData()
+    const works: IWork[] = await getWorkData();
     return (
         <div className='container mx-auto py-10'>
             <div>

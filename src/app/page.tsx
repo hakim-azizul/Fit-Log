@@ -1,12 +1,12 @@
 import Hero from "@/Components/Home/Hero"
-import WorksPage from "./works/page";
+import WorksLibrary from "@/Components/Home/WorksLibrary";
 
 
 export default function Home() {
   return (
     <div className="bg-black">
       <Hero />
-      <WorksPage />
+      <WorksLibrary />
     </div>
   );
 }
