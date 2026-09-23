@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <div className=" bg-black shadow-sm">
+    <div className=" bg-black  border-cyan-200/10 border">
       <nav className="container mx-auto">
         <div className="navbar">
           <div className="navbar-start">

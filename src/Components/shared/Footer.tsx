@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-black shadow-sm mt-auto">
-      <footer className="container mx-auto px-4 py-6">
+    <div className="bg-black border-cyan-200/10 border mt-auto">
+      <footer className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Image src={Logo} width={16} height={16} alt="Logo" />
