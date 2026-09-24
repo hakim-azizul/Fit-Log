@@ -18,8 +18,8 @@ const WorksPage = async() => {
 
     const works: IWork[] = await getWorkData();
     return (
-        <div className='container mx-auto py-10'>
-            <div>
+        <div className='container mx-auto py-10' id="workout-library">
+            <div className='mb-10'>
                 <h1 className='text-3xl text-white font-oswald font-bold'>THE LIBRARY</h1>
                 <p className='text-[#9CA3AF] text-lg font-inter'>Twelve lifts covering every major muscle group.</p>
             </div>

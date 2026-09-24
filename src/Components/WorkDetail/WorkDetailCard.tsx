@@ -33,7 +33,7 @@ const WorkDetailCard = ({ work }: WorkDetailCardProps) => {
             {muscleGroups?.map((group, index) => (
               <span
                 key={index}
-                className="bg-[#ffd700] text-black text-xs font-bold px-3 py-1 rounded-full uppercase"
+                className="bg-[#C2F800] text-black text-xs font-bold px-3 py-1 rounded-full uppercase"
               >
                 {group}
               </span>
@@ -76,14 +76,14 @@ const WorkDetailCard = ({ work }: WorkDetailCardProps) => {
             <ol className="space-y-2 text-sm text-gray-300">
               {instructions?.map((step, index) => (
                 <li key={index} className="flex gap-3">
-                  <span className="text-[#ffd700] font-semibold">{index + 1}.</span>
+                  <span className="text-[#C2F800] font-semibold">{index + 1}.</span>
                   <span>{step}</span>
                 </li>
               ))}
             </ol>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="flex-1 bg-[#ffd700] hover:bg-[#e6c200] text-black font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2">
+            <button className="flex-1 bg-[#C2F800] hover:bg-[#9ec903] text-black font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2">
               <span>📅</span> Add to today&apos;s plan
             </button>
             <button className="flex-1 bg-[#161922] hover:bg-[#202433] text-white border border-gray-700 font-semibold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2">

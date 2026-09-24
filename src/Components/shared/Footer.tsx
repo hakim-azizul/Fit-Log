@@ -18,8 +18,7 @@ const Footer = () => {
           </div>
           <div>
             <p className="text-sm text-gray-400 text-center md:text-right">
-              Copyright © {new Date().getFullYear()} - All right reserved by
-              ACME Industries Ltd
+              © {new Date().getFullYear()} FitLog — Workout Library. Train hard, log honest.
             </p>
           </div>
         </div>

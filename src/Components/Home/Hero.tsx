@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroImg from "@/assets/banner.png";
+import BrowseButton from "./BrowseBtn";
 
 const Hero = () => {
   return (
@@ -17,9 +18,7 @@ const Hero = () => {
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
           <div>
-            <button className="bg-[#C2F800] hover:bg-[#addd00] text-black font-bold px-6 py-3 rounded-md transition-all">
-              BROWSE WORKOUTS
-            </button>
+            <BrowseButton />
           </div>
         </div>
         <div className="flex-1 flex justify-end">
@@ -28,6 +27,7 @@ const Hero = () => {
               src={HeroImg}
               alt="Hero Illustration"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-contain"
               priority
             />

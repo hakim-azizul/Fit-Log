@@ -37,10 +37,20 @@ const Nav = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 <li>
-                  <a>Workouts</a>
+                <Link
+                  href="/"
+                  className="bg-black text-white hover:bg-[#C2F800]/20 hover:text-[#C2F800] p-x4 rounded-4xl"
+                >
+                  Workouts
+                </Link>
                 </li>
                 <li>
-                  <a>My Plan</a>
+                <Link
+                  href="/my-plan"
+                  className="bg-black text-white hover:bg-[#C2F800]/20 hover:text-[#C2F800] p-x4 rounded-4xl"
+                >
+                  My Plan
+                </Link>
                 </li>
               </ul>
             </div>
@@ -61,7 +71,7 @@ const Nav = () => {
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/my-plan"
                   className="bg-black text-white hover:bg-[#C2F800]/20 hover:text-[#C2F800] p-x4 rounded-4xl"
                 >
                   My Plan
