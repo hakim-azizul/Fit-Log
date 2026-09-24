@@ -1,4 +1,5 @@
 import Statistics from "@/Components/My-Plan/Statistics";
+import Tabs from "@/Components/My-Plan/Tabs";
 import React from "react";
 
 const MyPlanPage = () => {
@@ -12,6 +13,7 @@ const MyPlanPage = () => {
           Cap of five lifts for today. Finish them, then load more.
         </p>
         <Statistics />
+        <Tabs />
       </section>
     </div>
   );
