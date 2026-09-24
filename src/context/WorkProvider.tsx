@@ -1,3 +1,4 @@
+'use client'
 import IWork from "@/types/workType";
 import React, {
   createContext,
@@ -21,8 +22,8 @@ export const WorksProvider = createContext<IWorkProvider>({
 });
 
 const WorkProvider = ({ children }: { children: ReactNode }) => {
-  const [plans, setPlans] = useState([]);
-  const [savedWorks, setSavedWorks] = useState([]);
+  const [plans, setPlans] = useState<IWork[]>([]);
+  const [savedWorks, setSavedWorks] = useState<IWork[]>([]);
   const contextData = {
     plans,
     setPlans,

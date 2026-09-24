@@ -3,12 +3,12 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Nav from "@/Components/shared/Nav";
 import Footer from "@/Components/shared/Footer";
+import WorkProvider from "@/context/WorkProvider";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
-
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -28,9 +28,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`$${inter.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Nav />
-        {children}
-        <Footer />
+        <WorkProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </WorkProvider>
       </body>
     </html>
   );

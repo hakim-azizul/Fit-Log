@@ -2,6 +2,7 @@ import Image from "next/image";
 import Logo from "@/assets/logo.png";
 import React from "react";
 import Link from "next/link";
+import BadgeCounter from "../Nav/BadgeCounter";
 
 const Nav = () => {
   return (
@@ -80,24 +81,7 @@ const Nav = () => {
             </ul>
           </div>
           <div className="navbar-end flex gap-10">
-            <div className="flex items-center gap-5">
-                                <Link
-                  href="/"
-                  className="bg-black text-white hover:bg-[#C2F800]/20 hover:text-[#C2F800] p-x4 rounded-4xl"
-                >
-                  Plan
-                </Link>
-                <div className="badge badge-primary badge-xs"></div>
-            </div>
-            <div className="flex items-center gap-5">
-                                <Link
-                  href="/"
-                  className="bg-black text-white hover:bg-[#C2F800]/20 hover:text-[#C2F800] p-x4 rounded-4xl"
-                >
-                  Saved
-                </Link>
-                <div className="badge badge-primary badge-xs"></div>
-            </div>
+            <BadgeCounter />
           </div>
         </div>
       </nav>
