@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import IWork from "@/types/workType";
 import React, {
   createContext,
@@ -13,23 +13,33 @@ interface IWorkProvider {
   setPlans: Dispatch<SetStateAction<IWork[]>>;
   savedWorks: IWork[];
   setSavedWorks: Dispatch<SetStateAction<IWork[]>>;
+  activeTab: string;
+  setActiveTab: Dispatch<SetStateAction<string>>;
 }
+
 export const WorksProvider = createContext<IWorkProvider>({
   plans: [],
   setPlans: () => {},
   savedWorks: [],
   setSavedWorks: () => {},
+  activeTab: "today",
+  setActiveTab: () => {},
 });
 
 const WorkProvider = ({ children }: { children: ReactNode }) => {
   const [plans, setPlans] = useState<IWork[]>([]);
   const [savedWorks, setSavedWorks] = useState<IWork[]>([]);
+  const [activeTab, setActiveTab] = useState<string>("today");
+
   const contextData = {
     plans,
     setPlans,
     savedWorks,
     setSavedWorks,
+    activeTab,
+    setActiveTab,
   };
+
   return (
     <WorksProvider.Provider value={contextData}>
       {children}
