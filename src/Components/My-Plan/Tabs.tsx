@@ -29,9 +29,9 @@ const Tabs = () => {
         <div className="flex items-center bg-[#15171e] border border-gray-800 rounded-xl p-1 shadow-sm">
           <button
             onClick={() => setActiveTab("today")}
-            className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+            className={`px-5 py-2 rounded-lg text-m font-medium transition-all duration-300 ${
               activeTab === "today"
-                ? "bg-[#252830] text-white shadow"
+                ? "bg-[#C2F800] text-black"
                 : "text-gray-400 hover:text-gray-200"
             }`}
           >
@@ -40,9 +40,9 @@ const Tabs = () => {
 
           <button
             onClick={() => setActiveTab("saved")}
-            className={`px-8 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+            className={`px-8 py-2 rounded-lg text-m font-medium transition-all duration-300 ${
               activeTab === "saved"
-                ? "bg-[#252830] text-white shadow"
+                ? "bg-[#C2F800] text-black"
                 : "text-gray-400 hover:text-gray-200"
             }`}
           >

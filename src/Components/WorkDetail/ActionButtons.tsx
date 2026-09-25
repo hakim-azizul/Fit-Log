@@ -13,10 +13,10 @@ const ActionButtons = ({ work }: IActionBtn) => {
     useContext(WorksProvider);
 
   const handleAddPlan = () => {
-    const isPlaned = plans.find((prevwork) => prevwork === work);
+    const isPlaned = plans.find((prevwork) => prevwork.id === work.id);
+
     if (isPlaned) {
-      setPlans([...plans]);
-      toast.error(`${work.name}: is in you'r plan`, {
+      toast.error(`${work.name}: is already in your plan`, {
         autoClose: 1000,
         hideProgressBar: true,
         theme: "colored",
@@ -33,10 +33,10 @@ const ActionButtons = ({ work }: IActionBtn) => {
     }
   };
   const handleSaveLater = () => {
-    const isSaved = savedWorks.find((prevwork) => prevwork === work);
+    const isSaved = savedWorks.find((prevwork) => prevwork.id === work.id);
+
     if (isSaved) {
-      setSavedWorks([...savedWorks]);
-      toast.error(`${work.name}: allready saved`, {
+      toast.error(`${work.name}: is already saved`, {
         autoClose: 1000,
         hideProgressBar: true,
         theme: "colored",
