@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`$${inter.variable} ${oswald.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black">
+      <body className="min-h-full px-5 md:px-0 flex flex-col bg-black">
         <WorkProvider>
           <Nav />
           {children}
