@@ -3,11 +3,11 @@ import Image from "next/image";
 import IWork from "@/types/workType";
 
 interface CardProps {
-  item: IWork;
+  work: IWork;
 }
 
-const SavedWorksCard = ({ item }: CardProps) => {
-    const {image, name, equipment, duration, caloriesBurned, rating} = item
+const SavedWorksCard = ({ work }: CardProps) => {
+    const {image, name, equipment, duration, caloriesBurned, rating} = work
   return (
     <div className="bg-[#15171E] p-4 rounded-xl border border-gray-800 flex justify-between items-center w-full">
       <div className="flex items-center gap-4">
