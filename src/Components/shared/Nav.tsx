@@ -10,7 +10,6 @@ const Nav = () => {
     <div className="bg-black border-cyan-200/10 border">
       <nav className="container mx-auto">
         <div className="navbar">
-          {/* Logo and Mobile Menu */}
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -36,7 +35,7 @@ const Nav = () => {
               </div>
               <ul
                 tabIndex={-1}
-                className="menu menu-sm dropdown-content bg-[#15171e] rounded-box z-[1] mt-3 w-52 p-2 shadow gap-2 border border-gray-800"
+                className="menu menu-sm dropdown-content bg-[#15171e] rounded-box z-1 mt-3 w-52 p-2 shadow gap-2 border border-gray-800"
               >
                 <NavLinks />
               </ul>
@@ -45,7 +44,7 @@ const Nav = () => {
             <Image src={Logo} width={28} height={28} alt="Logo" />
             <Link
               href="/"
-              className="ml-4 text-2xl font-bold font-oswald text-white"
+              className="ml-1 md:ml-4 text-xl font-medium md:text-2xl md:font-bold font-oswald text-white"
             >
               FITLOG
             </Link>

@@ -6,9 +6,7 @@ import SavedWorksCard from "./SavedWorksCard";
 import Link from "next/link";
 
 const Tabs = () => {
-  const { activeTab, setActiveTab, plans, savedWorks } =
-    useContext(WorksProvider);
-
+  const { activeTab, setActiveTab, plans, savedWorks } = useContext(WorksProvider);
   const [sortBy, setSortBy] = useState("Duration");
 
   const currentWorks = activeTab === "plan" ? plans : savedWorks;
@@ -25,15 +23,14 @@ const Tabs = () => {
   });
 
   return (
-    <div className="w-full mx-auto my-8 font-sans">
-      <div className="flex justify-between items-center mb-6 w-full">
-        {/* Left: Tab */}
-        <div className="flex items-center bg-[#15171e] border border-gray-800 rounded-xl p-1 shadow-sm">
+    <div className="w-full mx-auto my-4 md:my-6 font-sans">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4 mb-4 md:mb-6 w-full">
+        <div className="flex items-center w-full md:w-auto bg-[#15171e] border border-gray-800 rounded-lg md:rounded-xl p-0.5 shadow-sm shrink-0">
           <button
             onClick={() => setActiveTab("plan")}
-            className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+            className={`w-1/2 md:w-auto flex justify-center px-0 md:px-4 py-1 md:py-2 rounded-md md:rounded-lg text-[10px] md:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
               activeTab === "plan"
-                ? "bg-[#C2F800] text-black"
+                ? "bg-[#C2F800] text-black shadow"
                 : "text-gray-400 hover:text-gray-200"
             }`}
           >
@@ -42,24 +39,23 @@ const Tabs = () => {
 
           <button
             onClick={() => setActiveTab("saved")}
-            className={`px-8 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+            className={`w-1/2 md:w-auto flex justify-center px-0 md:px-6 py-1 md:py-2 rounded-md md:rounded-lg text-[10px] md:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
               activeTab === "saved"
-                ? "bg-[#C2F800] text-black"
+                ? "bg-[#C2F800] text-black shadow"
                 : "text-gray-400 hover:text-gray-200"
             }`}
           >
             Saved
           </button>
         </div>
-
-        <div className="flex items-center gap-3 shrink-0">
-          <span className="text-gray-400 text-sm whitespace-nowrap">
+        <div className="flex items-center justify-between md:justify-end w-full md:w-auto gap-1.5 md:gap-3 shrink-0 bg-[#15171e] md:bg-transparent p-1 md:p-0 rounded-lg md:rounded-xl border border-gray-800 md:border-none">
+          <span className="text-gray-400 text-[10px] md:text-sm whitespace-nowrap pl-1 md:pl-0">
             Sort By
           </span>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="select select-ghost bg-transparent border border-gray-700 text-white rounded-lg pl-3 pr-8 py-1.5 text-sm outline-none w-auto focus:border-[#C2F800] transition-colors cursor-pointer appearance-none"
+            className="select select-ghost min-h-0 h-7 md:h-10 bg-transparent border border-gray-700 text-white rounded-md md:rounded-lg pl-1 pr-5 md:pl-3 md:pr-8 text-[10px] md:text-sm outline-none flex-1 md:w-auto focus:border-[#C2F800] transition-colors cursor-pointer appearance-none"
           >
             <option disabled={true} className="bg-[#15171e] text-gray-400">
               Sort By
@@ -76,10 +72,9 @@ const Tabs = () => {
           </select>
         </div>
       </div>
-
-      <div className="w-full min-h-112.5 border-dashed rounded-3xl flex flex-col items-center justify-center bg-transparent">
+      <div className="w-full min-h-75 md:min-h-87.5 border-dashed rounded-3xl flex flex-col items-center justify-center bg-transparent">
         {sortedWorks && sortedWorks.length > 0 ? (
-          <div className="w-full h-full flex flex-col gap-4">
+          <div className="w-full h-full flex flex-col gap-3 md:gap-4">
             {sortedWorks.map((work, index) =>
               activeTab === "plan" ? (
                 <PlansWorkCard key={index} work={work} />
@@ -89,16 +84,16 @@ const Tabs = () => {
             )}
           </div>
         ) : (
-          <div className="flex flex-col items-center text-center space-y-3 p-8 border border-gray-800 border-dashed rounded-3xl w-full">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white uppercase tracking-wider font-oswald">
+          <div className="flex flex-col items-center text-center space-y-2 md:space-y-3 p-4 sm:p-8 border border-gray-800 border-dashed rounded-2xl md:rounded-3xl w-full">
+            <h2 className="text-lg sm:text-xl md:text-3xl font-extrabold text-white uppercase tracking-wider font-oswald">
               Nothing Here Yet
             </h2>
-            <p className="text-gray-400 text-sm md:text-base max-w-md">
+            <p className="text-gray-400 text-[11px] md:text-base max-w-md">
               Visit the library and add a lift{" "}
               {activeTab === "plan" ? "for today's" : "for later"} workout.
             </p>
             <Link href="/">
-              <button className="mt-5 bg-[#C2F800] hover:bg-[#addd00] text-black font-bold py-2.5 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer">
+              <button className="mt-3 md:mt-5 bg-[#C2F800] hover:bg-[#addd00] text-black font-bold py-2 md:py-2.5 px-6 md:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer text-[11px] md:text-base">
                 Go to workouts
               </button>
             </Link>
