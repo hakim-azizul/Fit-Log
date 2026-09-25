@@ -13,7 +13,7 @@ const MarkDoneBtn = ({work}: IMarkDoneBtn) => {
     const handleMarkDone = () =>{
         const restInPlans= plans.filter(workplan => workplan.id !== work.id);
         setPlans(restInPlans);
-        toast.success(`${work.name}: is complited`, {
+        toast.success(`${work.name} is complited`, {
         autoClose: 1000,
         hideProgressBar: true,
         theme: "colored",
