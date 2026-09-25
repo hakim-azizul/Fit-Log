@@ -7,7 +7,7 @@ const BadgeCounter = () => {
     const {plans, savedWorks} =useContext(WorksProvider); 
   return (
     <div className="navbar-end flex items-center gap-10">
-      <Link href="/" className="flex items-center gap-3 group">
+      <Link href="/my-plan" className="flex items-center gap-3 group">
         <span className="text-gray-100 text-xl font-medium transition-colors group-hover:text-white">
           Plan
         </span>
@@ -16,7 +16,7 @@ const BadgeCounter = () => {
         </div>
       </Link>
 
-      <Link href="/" className="flex items-center gap-3 group">
+      <Link href="/my-plan" className="flex items-center gap-3 group">
         <span className="text-gray-400 text-xl font-medium transition-colors group-hover:text-gray-300">
           Saved
         </span>

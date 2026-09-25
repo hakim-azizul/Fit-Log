@@ -2,22 +2,55 @@
 import { WorksProvider } from "@/context/WorkProvider";
 import IWork from "@/types/workType";
 import React, { useContext } from "react";
+import { Flip, toast } from "react-toastify";
 
 interface IActionBtn {
   work: IWork;
 }
 
 const ActionButtons = ({ work }: IActionBtn) => {
-  const { plans, setPlans, savedWorks, setSavedWorks } = useContext(WorksProvider);
+  const { plans, setPlans, savedWorks, setSavedWorks } =
+    useContext(WorksProvider);
 
   const handleAddPlan = () => {
-    setPlans([...plans, work]);
-    // toast.success(`${work.name}: Added to today's plan`);
+    const isPlaned = plans.find((prevwork) => prevwork === work);
+    if (isPlaned) {
+      setPlans([...plans]);
+      toast.error(`${work.name}: is in you'r plan`, {
+        autoClose: 1000,
+        hideProgressBar: true,
+        theme: "colored",
+        transition: Flip,
+      });
+    } else {
+      setPlans([...plans, work]);
+      toast.success(`${work.name}: added to today's plan`, {
+        autoClose: 1000,
+        hideProgressBar: true,
+        theme: "colored",
+        transition: Flip,
+      });
+    }
   };
-
   const handleSaveLater = () => {
-    setSavedWorks([...savedWorks, work]);
-    // toast.success(`${work.name}: Saved for later`);
+    const isSaved = savedWorks.find((prevwork) => prevwork === work);
+    if (isSaved) {
+      setSavedWorks([...savedWorks]);
+      toast.error(`${work.name}: allready saved`, {
+        autoClose: 1000,
+        hideProgressBar: true,
+        theme: "colored",
+        transition: Flip,
+      });
+    } else {
+      setSavedWorks([...savedWorks, work]);
+      toast.success(`${work.name}: Saved for later`, {
+        autoClose: 1000,
+        hideProgressBar: true,
+        theme: "colored",
+        transition: Flip,
+      });
+    }
   };
 
   return (

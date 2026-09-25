@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/Components/shared/Nav";
 import Footer from "@/Components/shared/Footer";
 import WorkProvider from "@/context/WorkProvider";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,10 +28,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`$${inter.variable} ${oswald.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-black">
         <WorkProvider>
           <Nav />
           {children}
+          <ToastContainer/>
           <Footer />
         </WorkProvider>
       </body>

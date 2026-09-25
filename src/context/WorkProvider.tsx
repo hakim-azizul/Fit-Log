@@ -22,14 +22,14 @@ export const WorksProvider = createContext<IWorkProvider>({
   setPlans: () => {},
   savedWorks: [],
   setSavedWorks: () => {},
-  activeTab: "today",
+  activeTab: "plan",
   setActiveTab: () => {},
 });
 
 const WorkProvider = ({ children }: { children: ReactNode }) => {
   const [plans, setPlans] = useState<IWork[]>([]);
   const [savedWorks, setSavedWorks] = useState<IWork[]>([]);
-  const [activeTab, setActiveTab] = useState<string>("today");
+  const [activeTab, setActiveTab] = useState<string>("plan");
 
   const contextData = {
     plans,
