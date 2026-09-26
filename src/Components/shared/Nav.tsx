@@ -7,7 +7,7 @@ import NavLinks from "../Nav/NavLinks";
 
 const Nav = () => {
   return (
-    <div className="bg-black border-cyan-200/10 border">
+    <div className="bg-black border-b-2 border-cyan-200/10 ">
       <nav className="container mx-auto">
         <div className="navbar">
           <div className="navbar-start">
