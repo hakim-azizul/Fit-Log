@@ -44,7 +44,7 @@ const Nav = () => {
             <Image src={Logo} width={28} height={28} alt="Logo" />
             <Link
               href="/"
-              className="ml-1 md:ml-4 text-xl font-medium md:text-2xl md:font-bold font-oswald text-white"
+              className="ml-2 md:ml-4 text-xl font-medium md:text-2xl md:font-bold font-oswald text-white"
             >
               FITLOG
             </Link>

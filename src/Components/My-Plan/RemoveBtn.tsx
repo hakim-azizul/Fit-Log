@@ -9,11 +9,10 @@ interface IRemoveBtn {
 }
 
 const RemoveBtn = ({ work }: IRemoveBtn) => {
-  const { activeTab, plans, setPlans, savedWorks, setSavedWorks } =
-    useContext(WorksProvider);
+  const { activeTab, plans, setPlans, savedWorks, setSavedWorks } = useContext(WorksProvider);
 
   const handleRemove = () => {
-    if (activeTab === "today") {
+    if (activeTab === "plan") {
       const restPlans = plans.filter((planedWork) => planedWork.id !== work.id);
       setPlans(restPlans);
       toast.error(`${work.name} plan is canceled`, {

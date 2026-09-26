@@ -44,15 +44,11 @@ const PlansWorkCard = ({ work }: CardProps) => {
 <div className="flex flex-row items-center justify-between md:justify-end gap-2 w-full md:w-auto shrink-0 mt-3 md:mt-0 pt-2 border-t border-gray-800 md:border-none md:pt-0">
         
         <Link href={`./works/${work.id}`} className="shrink-0">
-          {/* মোবাইলে text-[11px] এবং প্যাডিং কমানো হয়েছে যাতে এক লাইনে ৩টা বাটন আটে */}
           <button className="bg-transparent border border-gray-600 hover:border-white text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-sm font-medium transition-colors cursor-pointer whitespace-nowrap">
             View Details
           </button>
         </Link>
-
-        {/* ডানদিকের আইকন বাটনগুলো */}
         <div className="flex flex-row items-center gap-2 shrink-0">
-          {/* PlansWorkCard এর ক্ষেত্রে MarkDoneBtn থাকবে, SavedWorksCard এর ক্ষেত্রে এটি বাদ দেবেন */}
           <MarkDoneBtn work={work} /> 
           <RemoveBtn work={work} />
         </div>
