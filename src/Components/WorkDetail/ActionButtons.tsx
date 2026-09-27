@@ -1,6 +1,7 @@
 "use client";
 import { WorksProvider } from "@/context/WorkProvider";
 import IWork from "@/types/workType";
+import { Bookmark, CalendarPlus } from "lucide-react";
 import React, { useContext } from "react";
 import { Flip, toast } from "react-toastify";
 
@@ -65,7 +66,7 @@ const ActionButtons = ({ work }: IActionBtn) => {
               : "bg-[#C2F800] hover:bg-[#a6d800] text-black cursor-pointer"
           }`}
       >
-        <span className="text-lg">📅</span>
+        <CalendarPlus />
         {isPlanFull ? "Plan Full (Max 5)" : "Add to today's plan"}
       </button>
 
@@ -73,7 +74,7 @@ const ActionButtons = ({ work }: IActionBtn) => {
         onClick={() => handleSaveLater()}
         className="flex-1 bg-transparent text-white border border-gray-400 hover:border-[#C2F800] hover:text-[#C2F800] font-semibold py-3 px-6 rounded-2xl transition-colors duration-300 ease-in-out flex items-center justify-center gap-2 cursor-pointer"
       >
-        <span className="text-lg">🔖</span> Save for later
+        <Bookmark /> Save for later
       </button>
     </div>
   );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import IWork from "@/types/workType";
 import Link from "next/link";
+import { Flame, HourglassCog, Star } from "lucide-react";
 
 interface WorkoutCardProps {
   work: IWork;
@@ -51,15 +52,15 @@ const WorkoutCard = ({ work }: WorkoutCardProps) => {
           <hr className="border-gray-800" />
           <div className="flex items-center justify-between text-xs text-gray-300">
             <div className="flex items-center gap-1">
-              <span>⏱</span>
+              <HourglassCog className="w-4, h-4"/>
               <span>{duration} min</span>
             </div>
             <div className="flex items-center gap-1">
-              <span>🔥</span>
+              <Flame className="w-4.5, h-4.5"/>
               <span>{caloriesBurned} kcal</span>
             </div>
             <div className="flex items-center gap-1 text-white font-medium">
-              <span>⭐</span>
+              <Star className="w-4, h-4"/>
               <span>{rating}</span>
             </div>
           </div>

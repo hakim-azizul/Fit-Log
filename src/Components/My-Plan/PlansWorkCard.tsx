@@ -4,6 +4,7 @@ import IWork from "@/types/workType";
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import MarkDoneBtn from "./MarkDoneBtn";
+import { HourglassCog, Flame, Star } from "lucide-react";
 
 interface CardProps {
   work: IWork;
@@ -30,13 +31,13 @@ const PlansWorkCard = ({ work }: CardProps) => {
           <p className="text-xs sm:text-sm text-gray-400 mb-1">{equipment}</p>
           <div className="text-xs sm:text-sm text-gray-400 flex flex-wrap items-center gap-2 sm:gap-3">
             <span className="flex items-center gap-1 whitespace-nowrap">
-              <span className="text-[#C2F800]">⏱</span> {duration} min
+              <HourglassCog className="w-4, h-4"/> {duration} min
             </span>
             <span className="flex items-center gap-1 whitespace-nowrap">
-              <span className="text-[#C2F800]">🔥</span> {caloriesBurned} kcal
+              <Flame className="w-4.5, h-4.5"/> {caloriesBurned} kcal
             </span>
             <span className="flex items-center gap-1 whitespace-nowrap">
-              <span className="text-[#C2F800]">⭐</span> {rating}
+              <Star className="w-4, h-4"/> {rating}
             </span>
           </div>
         </div>

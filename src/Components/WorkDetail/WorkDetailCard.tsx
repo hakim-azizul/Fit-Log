@@ -97,7 +97,7 @@ const WorkDetailCard = ({ work }: WorkDetailCardProps) => {
               <span className="text-gray-400 uppercase tracking-wider text-xs font-semibold">
                 Rating
               </span>
-              <span className="font-medium text-right">{rating} ⭐</span>
+              <span className="font-medium text-right">{rating}</span>
             </div>
           </div>
           <div className="space-y-3 pt-2">

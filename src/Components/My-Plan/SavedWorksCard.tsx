@@ -3,6 +3,7 @@ import Image from "next/image";
 import IWork from "@/types/workType";
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
+import { HourglassCog, Flame, Star } from "lucide-react";
 
 interface CardProps {
   work: IWork;
@@ -31,13 +32,13 @@ const SavedWorksCard = ({ work }: CardProps) => {
           </p>
           <div className="text-xs sm:text-sm text-gray-400 flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
             <span className="flex items-center gap-1 whitespace-nowrap">
-              <span className="text-[#C2F800]">⏱</span> {duration} min
+              <HourglassCog className="w-4, h-4"/> {duration} min
             </span>
             <span className="flex items-center gap-1 whitespace-nowrap">
-              <span className="text-[#C2F800]">🔥</span> {caloriesBurned} kcal
+              <Flame className="w-4.5, h-4.5"/> {caloriesBurned} kcal
             </span>
             <span className="flex items-center gap-1 whitespace-nowrap">
-              <span className="text-[#C2F800]">⭐</span> {rating}
+              <Star className="w-4, h-4"/> {rating}
             </span>
           </div>
         </div>
