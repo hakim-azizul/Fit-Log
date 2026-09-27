@@ -1,12 +1,7 @@
 "use client";
 import IWork from "@/types/workType";
-import React, {
-  createContext,
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useState,
-} from "react";
+import React, { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 interface IWorkProvider {
   plans: IWork[];
@@ -17,18 +12,11 @@ interface IWorkProvider {
   setActiveTab: Dispatch<SetStateAction<string>>;
 }
 
-export const WorksProvider = createContext<IWorkProvider>({
-  plans: [],
-  setPlans: () => {},
-  savedWorks: [],
-  setSavedWorks: () => {},
-  activeTab: "plan",
-  setActiveTab: () => {},
-});
+export const WorksProvider = createContext<IWorkProvider>({} as IWorkProvider);
 
 const WorkProvider = ({ children }: { children: ReactNode }) => {
-  const [plans, setPlans] = useState<IWork[]>([]);
-  const [savedWorks, setSavedWorks] = useState<IWork[]>([]);
+  const [plans, setPlans, isPlansMounted] = useLocalStorage<IWork[]>("fitlog_plans", []);
+  const [savedWorks, setSavedWorks, isSavedMounted] = useLocalStorage<IWork[]>("fitlog_savedWorks", []);
   const [activeTab, setActiveTab] = useState<string>("plan");
 
   const contextData = {
@@ -39,6 +27,7 @@ const WorkProvider = ({ children }: { children: ReactNode }) => {
     activeTab,
     setActiveTab,
   };
+  if (!isPlansMounted || !isSavedMounted) return null;
 
   return (
     <WorksProvider.Provider value={contextData}>
