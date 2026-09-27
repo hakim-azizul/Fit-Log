@@ -9,12 +9,12 @@ interface IActionBtn {
 }
 
 const ActionButtons = ({ work }: IActionBtn) => {
-  const { plans, setPlans, savedWorks, setSavedWorks } =
-    useContext(WorksProvider);
+  const { plans, setPlans, savedWorks, setSavedWorks } = useContext(WorksProvider);
 
+  const isPlanFull = plans.length >= 5;
+  
   const handleAddPlan = () => {
     const isPlaned = plans.find((prevwork) => prevwork.id === work.id);
-
     if (isPlaned) {
       toast.error(`${work.name}: is already in your plan`, {
         autoClose: 1000,
@@ -32,9 +32,9 @@ const ActionButtons = ({ work }: IActionBtn) => {
       });
     }
   };
+
   const handleSaveLater = () => {
     const isSaved = savedWorks.find((prevwork) => prevwork.id === work.id);
-
     if (isSaved) {
       toast.error(`${work.name}: is already saved`, {
         autoClose: 1000,
@@ -57,9 +57,16 @@ const ActionButtons = ({ work }: IActionBtn) => {
     <div className="flex flex-col sm:flex-row gap-4 pt-4">
       <button
         onClick={() => handleAddPlan()}
-        className="flex-1 bg-[#C2F800] hover:bg-[#a6d800] text-black font-semibold py-3 px-6 rounded-2xl transition-colors duration-300 ease-in-out flex items-center justify-center gap-2 cursor-pointer"
+        disabled={isPlanFull}
+        className={`flex-1 font-semibold py-3 px-6 rounded-2xl transition-all duration-300 ease-in-out flex items-center justify-center gap-2 
+          ${
+            isPlanFull
+              ? "bg-gray-800 text-gray-500 cursor-not-allowed opacity-80"
+              : "bg-[#C2F800] hover:bg-[#a6d800] text-black cursor-pointer"
+          }`}
       >
-        <span className="text-lg">📅</span> Add to today&apos;s plan
+        <span className="text-lg">📅</span>
+        {isPlanFull ? "Plan Full (Max 5)" : "Add to today's plan"}
       </button>
 
       <button
