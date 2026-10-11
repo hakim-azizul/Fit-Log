@@ -10,6 +10,9 @@
 ## 📖 Description
 **FitLog** is a dynamic, responsive, and performance-optimized workout planning web application. Designed with a sleek dark-neon theme (`#C2F800`), it empowers users to explore fitness exercises, seamlessly organize their daily workout routines ("Today's Plan"), and bookmark specific routines for future sessions ("Saved"). 
 
+<img width="823" height="871" alt="image" src="https://github.com/user-attachments/assets/f22efd0d-c40d-487b-85ad-1b33437fc972" />
+
+
 ## ⚡ Key Features
 
 | Feature | Description |
